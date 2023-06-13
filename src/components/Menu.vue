@@ -1,6 +1,6 @@
 <template>
     <v-card height="100%">
-        <v-navigation-drawer absolute permanent left width="200px">
+        <v-navigation-drawer absolute permanent left>
             <template v-slot:prepend>
                 <v-list-item>
                     <v-list-item-content>
