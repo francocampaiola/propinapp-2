@@ -1,12 +1,12 @@
 <template>
     <v-container>
-        <p>Home</p>
+        <p>History</p>
     </v-container>
 </template>
 
 <script>
 export default {
-    name: 'HomeView',
+    name: 'HistoryView',
     data() {
         return {
             //

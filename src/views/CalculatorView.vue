@@ -1,12 +1,12 @@
 <template>
     <v-container>
-        <p>Home</p>
+        <p>Calculator</p>
     </v-container>
 </template>
 
 <script>
 export default {
-    name: 'HomeView',
+    name: 'CalculatorView',
     data() {
         return {
             //
