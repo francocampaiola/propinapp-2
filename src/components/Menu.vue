@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer app absolute permanent left>
+    <v-navigation-drawer app absolute permanent left height="100%">
         <template v-slot:prepend>
             <v-list-item>
                 <v-list-item-content>

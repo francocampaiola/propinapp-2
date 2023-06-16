@@ -6,7 +6,7 @@
             <ToggleTheme />
         </v-app-bar>
         <v-container>
-            <v-card min-height="345" width="755" class="d-flex align-center mx-auto justify-center mb-6 rounded-lg mt-10">
+            <v-card width="755" class="d-flex align-center mx-auto justify-center mb-6 rounded-lg mt-10">
                 <v-row>
                     <v-col>
                         <v-container>
@@ -20,14 +20,11 @@
                                 <div class="text-body-1 caption mb-2">Seleccione la propina</div>
                                 <v-col>
                                     <v-row class="pa-2">
-                                        <v-btn x-large size="lg" class="me-2">5%</v-btn>
-                                        <v-btn x-large class="me-2">5%</v-btn>
-                                        <v-btn x-large>5%</v-btn>
-                                    </v-row>
-                                    <v-row class="pa-2">
-                                        <v-btn x-large class="me-2">5%</v-btn>
-                                        <v-btn x-large class="me-2">5%</v-btn>
-                                        <v-btn x-large>5%</v-btn>
+                                        <v-btn-toggle v-model="propina" color="#00BFA5">
+                                            <v-btn x-large size="lg" class="me-2">5%</v-btn>
+                                            <v-btn x-large class="me-2">5%</v-btn>
+                                            <v-btn x-large>5%</v-btn>
+                                        </v-btn-toggle>
                                     </v-row>
                                 </v-col>
                             </div>
@@ -82,7 +79,7 @@ export default {
     name: 'CalculatorView',
     data() {
         return {
-            //
+            propina: 0
         }
     },
     components: {
