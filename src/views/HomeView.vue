@@ -30,6 +30,11 @@
                                         v-model="balanceAgregar"></v-text-field>
                                 </v-card-text>
                                 <v-divider></v-divider>
+                                <div v-if="hayErrores">
+                                    <div class="alert alert-danger py-1" v-for="error in errores" :key="error.id">
+                                        <v-alert type="error">{{ error }}</v-alert>
+                                    </div>
+                                </div>
                                 <v-card-actions>
                                     <v-spacer></v-spacer>
                                     <v-btn text @click="closeDialogAgregar">
@@ -95,6 +100,11 @@
                                 color="success"></v-text-field>
                         </v-card-text>
                         <v-divider></v-divider>
+                        <div v-if="hayErrores">
+                            <div class="alert alert-danger py-1" v-for="error in errores" :key="error.id">
+                                <v-alert type="error">{{ error }}</v-alert>
+                            </div>
+                        </div>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn text @click="closeDialogDar">

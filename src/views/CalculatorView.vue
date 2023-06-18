@@ -59,6 +59,11 @@
                                             </v-col>
                                         </v-row>
                                     </div>
+                                    <div v-if="hayErrores">
+                                        <div class="alert alert-danger py-1" v-for="error in errores" :key="error.id">
+                                            <v-alert type="error">{{ error }}</v-alert>
+                                        </div>
+                                    </div>
                                     <div>
                                         <v-btn block class="mb-3" @click="calcular">Calcular</v-btn>
                                         <v-btn block @click="limpiar">Limpiar</v-btn>
@@ -144,6 +149,7 @@ export default {
             }
         },
         limpiar: function () {
+            this.errores = [];
             this.cuenta = null;
             this.porcentajePropina = null;
             this.personas = null;
