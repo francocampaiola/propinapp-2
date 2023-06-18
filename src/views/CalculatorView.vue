@@ -20,10 +20,10 @@
                                 <div class="text-body-1 caption mb-2">Seleccione la propina</div>
                                 <v-col>
                                     <v-row class="pa-2">
-                                        <v-btn-toggle v-model="propina" color="#00BFA5">
-                                            <v-btn x-large size="lg" class="me-2">5%</v-btn>
-                                            <v-btn x-large class="me-2">5%</v-btn>
-                                            <v-btn x-large>5%</v-btn>
+                                        <v-btn-toggle v-model="propina" required color="#00BFA5">
+                                            <v-btn x-large size="lg" class="me-2" value="5">5%</v-btn>
+                                            <v-btn x-large class="me-2" value="10">10%</v-btn>
+                                            <v-btn x-large value="15">15%</v-btn>
                                         </v-btn-toggle>
                                     </v-row>
                                 </v-col>
@@ -79,7 +79,7 @@ export default {
     name: 'CalculatorView',
     data() {
         return {
-            propina: 0
+            propina: 10
         }
     },
     components: {
