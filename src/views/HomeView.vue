@@ -94,7 +94,7 @@
 
                         <v-card-text>
                             <v-select label="Persona" v-model="persona" prepend-inner-icon="mdi-account" color="success"
-                                :items="items">
+                                :items="arrPersonas" item-value="name" item-text="name">
                             </v-select>
                             <v-text-field label="Monto" v-model="monto" prepend-inner-icon="mdi-currency-usd"
                                 color="success"></v-text-field>
@@ -139,10 +139,10 @@ export default {
             dialogAgregar: false,
             enviado: false,
             arr: [],
+            arrPersonas: [],
             persona: null,
             monto: null,
             fechaPropina: null,
-            items: ['Persona 1', 'Persona 2', 'Persona 3', 'Persona 4'],
             errores: [],
         }
     },
@@ -259,6 +259,12 @@ export default {
         } else {
             this.balance = parseInt(localStorage.getItem("balance"));
         }
+
+        fetch('http://propinapp2.000webhostapp.com/api/api.php')
+            .then(response => response.json())
+            .then(data => {
+                this.arrPersonas = data;
+            });
 
         this.arr = JSON.parse(localStorage.getItem("dato")) || [];
     }
