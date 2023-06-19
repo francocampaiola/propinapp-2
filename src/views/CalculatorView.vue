@@ -123,6 +123,10 @@ export default {
             }
 
             if (this.errores.length === 0) {
+
+                this.propinaPorPersona = (parseInt(this.cuenta) * parseInt(this.porcentajePropina)) / 100;
+                this.totalPorPersona = (parseInt(this.cuenta) + parseInt(this.propinaPorPersona)) / parseInt(this.personas);
+
                 let nuevoObj = {
                     cuenta: this.cuenta,
                     porcentajePropina: this.porcentajePropina,
@@ -142,10 +146,9 @@ export default {
 
                 this.guardarArray();
 
-                this.propinaPorPersona = nuevoObj.propinaPorPersona.toFixed(2);
-                this.totalPorPersona = nuevoObj.totalPorPersona.toFixed(2);
-            } else {
-                console.log(this.errores);
+                this.cuenta = null;
+                this.porcentajePropina = null;
+                this.personas = null;
             }
         },
         limpiar: function () {
